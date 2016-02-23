@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import lombok.val;
@@ -53,7 +53,7 @@ public class NBPExchangeRateSearchServiceTest {
 	// tested service
 	private NBPExchangeRateSearchService service;
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void init() {
 		HttpClient httpClient = mock(HttpClient.class);
 		
