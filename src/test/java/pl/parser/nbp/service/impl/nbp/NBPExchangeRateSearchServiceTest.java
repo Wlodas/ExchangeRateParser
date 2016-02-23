@@ -34,7 +34,7 @@ public class NBPExchangeRateSearchServiceTest {
 	
 	private static final LocalDate dateFrom = LocalDate.of(2014, 1, 1);
 	private static final LocalDate dateTo = LocalDate.of(2015, 1, 31);
-	private static final LocalDate minDate = LocalDate.of(NBPExchangeRateSearchService.minYear.getValue(), 1, 1);
+	private static final LocalDate minDate = LocalDate.of(minYear.getValue(), 1, 1);
 	private static final Year currentYear = Year.of(2015);
 	
 	private static final LocalDate earlyDate = LocalDate.of(2000, 1, 1);
