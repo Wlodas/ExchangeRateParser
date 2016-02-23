@@ -33,6 +33,7 @@ public class HttpClientTest {
 	public void getExchangeRateTable() throws InterruptedException, ExecutionException {
 		val directoryList = client.getExchangeRateFileNames(currentDirectoryName).get();
 		val result = client.getExchangeRateTable(directoryList.get(0)).get();
+		assertThat(result).isNotNull();
 		assertThat(result.getPositions()).isNotEmpty();
 	}
 }
