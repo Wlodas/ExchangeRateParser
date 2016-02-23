@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import pl.parser.nbp.app.SearchParametersModel ?>
+
+<VBox id="AnchorPane" prefHeight="200" prefWidth="320" spacing="5" xmlns:fx="http://javafx.com/fxml" stylesheets="@/styles/Styles.css" fx:controller="pl.parser.nbp.app.MainController">
+	<fx:define>
+		<SearchParametersModel fx:id="model" />
+	</fx:define>
+	<children>
+		<TextField fx:id="currencyCode" />
+		<DatePicker fx:id="dateFrom" />
+		<DatePicker fx:id="dateTo" />
+		<Button text="Search!" onAction="#handleSearchAction" />
+	</children>
+</VBox>

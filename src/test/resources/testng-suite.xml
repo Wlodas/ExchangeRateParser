@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite">
+	<test name="Default test">
+		<classes>
+			<class name="pl.parser.nbp.jaxb.adapter.CommaBigDecimalAdapterTest" />
+			<class name="pl.parser.nbp.service.impl.nbp.NBPExchangeRateSearchServiceTest" />
+			<class name="pl.parser.nbp.service.impl.nbp.HttpClientTest" />
+		</classes>
+	</test>
+</suite>
