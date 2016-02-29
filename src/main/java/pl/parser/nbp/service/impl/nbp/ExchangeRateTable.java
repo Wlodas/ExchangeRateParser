@@ -11,16 +11,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import pl.parser.nbp.jaxb.adapter.CommaBigDecimalAdapter;
 import pl.parser.nbp.jaxb.adapter.LocalDateAdapter;
 
 // XML fields have been stripped to minimum used by application itself.
-@Data
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor(access = AccessLevel.PACKAGE)
+@Value
+@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @XmlRootElement(name = "tabela_kursow")
 @XmlAccessorType(XmlAccessType.FIELD)
 class ExchangeRateTable {
@@ -31,9 +31,9 @@ class ExchangeRateTable {
 	@XmlElement(name="pozycja")
 	private List<ExchangeRateTablePosition> positions;
 	
-	@Data
-	@NoArgsConstructor(access = AccessLevel.PRIVATE)
-	@AllArgsConstructor(access = AccessLevel.PACKAGE)
+	@Value
+	@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
+	@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 	@XmlAccessorType(XmlAccessType.FIELD)
 	static class ExchangeRateTablePosition {
 		@XmlElement(name = "kod_waluty")
