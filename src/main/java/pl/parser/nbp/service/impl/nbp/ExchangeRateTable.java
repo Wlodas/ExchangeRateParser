@@ -4,8 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -22,7 +20,6 @@ import pl.parser.nbp.jaxb.adapter.LocalDateAdapter;
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
 @XmlRootElement(name = "tabela_kursow")
-@XmlAccessorType(XmlAccessType.FIELD)
 class ExchangeRateTable {
 	@XmlElement(name = "data_publikacji")
 	@XmlJavaTypeAdapter(LocalDateAdapter.class)
@@ -34,7 +31,6 @@ class ExchangeRateTable {
 	@Value
 	@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 	@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-	@XmlAccessorType(XmlAccessType.FIELD)
 	static class ExchangeRateTablePosition {
 		@XmlElement(name = "kod_waluty")
 		private String currencyCode;
