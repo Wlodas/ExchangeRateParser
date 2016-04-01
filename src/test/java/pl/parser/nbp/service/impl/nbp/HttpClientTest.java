@@ -1,6 +1,6 @@
 package pl.parser.nbp.service.impl.nbp;
 
-import static org.fest.assertions.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 import static pl.parser.nbp.service.impl.nbp.NBPExchangeRateSearchService.directoryFormat;
 
 import java.util.concurrent.ExecutionException;

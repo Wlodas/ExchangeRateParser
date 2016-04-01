@@ -1,6 +1,6 @@
 package pl.parser.nbp.jaxb.adapter;
 
-import static org.testng.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
 import java.text.ParseException;
@@ -17,10 +17,10 @@ public class CommaBigDecimalAdapterTest {
 	private final CommaBigDecimalAdapter adapter = new CommaBigDecimalAdapter();
 	
 	public void unmarshal() throws ParseException {
-		assertEquals(adapter.unmarshal(stringValue), bigDecimalValue);
+		assertThat(adapter.unmarshal(stringValue)).isEqualTo(bigDecimalValue);
 	}
 	
 	public void marshal() {
-		assertEquals(adapter.marshal(bigDecimalValue), stringValue);
+		assertThat(adapter.marshal(bigDecimalValue)).isEqualTo(stringValue);
 	}
 }
