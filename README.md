@@ -17,7 +17,7 @@ Used technologies and libraries:
 - Jersey Client
 - JAXB
 - TestNG
-- FEST assertions
+- AssertJ
 - Mockito
 
 IDE requirements:
