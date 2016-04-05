@@ -19,7 +19,7 @@ import org.testng.annotations.Test;
 
 import lombok.val;
 import pl.parser.nbp.service.ExchangeRateInfo;
-import pl.parser.nbp.service.impl.nbp.ExchangeRateTable.ExchangeRateTablePosition;
+import pl.parser.nbp.service.impl.nbp.ExchangeRateTable.Position;
 
 @Test(dependsOnGroups = HttpClientTest.TEST_GROUP)
 public class NBPExchangeRateSearchServiceTest {
@@ -43,9 +43,9 @@ public class NBPExchangeRateSearchServiceTest {
 	private static final String xmlFileName1 = "xml1";
 	private static final String xmlFileName2 = "xml2";
 	
-	private static final ExchangeRateTablePosition position1 = new ExchangeRateTablePosition(currencyCode1, BigDecimal.ONE, BigDecimal.ONE);
-	private static final ExchangeRateTablePosition position2 = new ExchangeRateTablePosition(currencyCode1, BigDecimal.TEN, BigDecimal.TEN);
-	private static final ExchangeRateTablePosition position3 = new ExchangeRateTablePosition(currencyCode2, BigDecimal.ONE, BigDecimal.ONE);
+	private static final ExchangeRateTable.Position position1 = new Position(currencyCode1, BigDecimal.ONE, BigDecimal.ONE);
+	private static final ExchangeRateTable.Position position2 = new Position(currencyCode1, BigDecimal.TEN, BigDecimal.TEN);
+	private static final ExchangeRateTable.Position position3 = new Position(currencyCode2, BigDecimal.ONE, BigDecimal.ONE);
 	
 	private static final ExchangeRateTable table1 = new ExchangeRateTable(dateFrom, Arrays.asList(position1, position3));
 	private static final ExchangeRateTable table2 = new ExchangeRateTable(dateFrom, Arrays.asList(position2, position2));

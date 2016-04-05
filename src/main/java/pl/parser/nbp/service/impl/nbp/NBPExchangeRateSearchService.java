@@ -24,7 +24,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import pl.parser.nbp.service.ExchangeRateInfo;
 import pl.parser.nbp.service.ExchangeRateSearchService;
-import pl.parser.nbp.service.impl.nbp.ExchangeRateTable.ExchangeRateTablePosition;
+import pl.parser.nbp.service.impl.nbp.ExchangeRateTable.Position;
 
 @Singleton
 @RequiredArgsConstructor(onConstructor = @__(@Inject))
@@ -42,7 +42,7 @@ public class NBPExchangeRateSearchService implements ExchangeRateSearchService {
 	
 	@Override
 	public ExchangeRateInfo findExchangeRate(String currencyCode, LocalDate dateFrom, LocalDate dateTo) {
-		List<ExchangeRateTablePosition> positions = calculateDirectories(dateFrom, dateTo)
+		List<ExchangeRateTable.Position> positions = calculateDirectories(dateFrom, dateTo)
 			// query exchange rate directories
 			.map(directoryName -> httpClient.getExchangeRateFileNames(directoryName))
 			.flatMap(Unchecked.function(filenameStream -> filenameStream.get().stream()))
@@ -81,7 +81,7 @@ public class NBPExchangeRateSearchService implements ExchangeRateSearchService {
 		;
 	}
 	
-	double calculateMeanBuyingRate(Collection<ExchangeRateTablePosition> positions) {
+	double calculateMeanBuyingRate(Collection<Position> positions) {
 		return mean.evaluate(positions.stream()
 			.map(p -> p.getBuyingRate())
 			.mapToDouble(BigDecimal::doubleValue)
@@ -89,7 +89,7 @@ public class NBPExchangeRateSearchService implements ExchangeRateSearchService {
 		);
 	}
 	
-	double calculateSalesStandardDeviation(Collection<ExchangeRateTablePosition> positions) {
+	double calculateSalesStandardDeviation(Collection<Position> positions) {
 		return standardDeviation.evaluate(positions.stream()
 			.map(p -> p.getSellingRate())
 			.mapToDouble(BigDecimal::doubleValue)

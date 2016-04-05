@@ -26,12 +26,12 @@ class ExchangeRateTable {
 	private LocalDate publicationDate;
 	
 	@XmlElement(name="pozycja")
-	private List<ExchangeRateTablePosition> positions;
+	private List<Position> positions;
 	
 	@Value
 	@RequiredArgsConstructor(access = AccessLevel.PACKAGE)
 	@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-	static class ExchangeRateTablePosition {
+	static class Position {
 		@XmlElement(name = "kod_waluty")
 		private String currencyCode;
 		
