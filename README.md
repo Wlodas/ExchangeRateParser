@@ -1,6 +1,6 @@
 # ExchangeRateParser
 
-Job application project for Intitek company.
+Job application project.
 
 Instead of originally required console interface a very simple JavaFX GUI has been implemented. After building project with Maven application can be started just from a JAR file.
 
